@@ -1,0 +1,417 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5f9;
+    color: #222;
+}
+
+.hidden {
+    display: none;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+
+/* ================= LOGIN PAGE ================= */
+
+#loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+}
+
+.login-box {
+    width: 400px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-box label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.login-box button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #1d4ed8;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+/* ================= EXAM HEADER ================= */
+
+.exam-header {
+    background: #1e3a8a;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 35px;
+}
+
+.exam-header h2 {
+    margin-bottom: 5px;
+}
+
+.timer {
+    background: white;
+    color: #dc2626;
+
+    padding: 12px 20px;
+    border-radius: 8px;
+
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* ================= EXAM CONTAINER ================= */
+
+.exam-container {
+    display: flex;
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: 30px auto;
+
+    padding: 0 20px;
+}
+
+
+/* ================= QUESTION SECTION ================= */
+
+.question-section {
+    flex: 1;
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.question-number {
+    color: #2563eb;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.question-section h2 {
+    margin-bottom: 25px;
+}
+
+
+/* ================= OPTIONS ================= */
+
+.option {
+    display: block;
+
+    padding: 15px;
+
+    margin: 12px 0;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: #f0f6ff;
+    border-color: #2563eb;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 35px;
+}
+
+.buttons button,
+.result-box button {
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.buttons button:hover,
+.result-box button:hover {
+    background: #1d4ed8;
+}
+
+#previousBtn {
+    background: #64748b;
+}
+
+
+/* ================= QUESTION PANEL ================= */
+
+.question-panel {
+    width: 280px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    height: fit-content;
+}
+
+.question-panel h3 {
+    margin-bottom: 20px;
+}
+
+
+#questionNumbers {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.question-btn {
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid #ccc;
+
+    background: #f8fafc;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.question-btn:hover {
+    border-color: #2563eb;
+}
+
+.question-btn.active {
+    border: 2px solid #2563eb;
+}
+
+.question-btn.answered {
+    background: #22c55e;
+    color: white;
+}
+
+
+/* ================= LEGEND ================= */
+
+.legend {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.legend p {
+    margin: 8px 0;
+}
+
+.legend-box {
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+
+    margin-right: 8px;
+
+    vertical-align: middle;
+
+    border-radius: 3px;
+}
+
+.legend-box.answered {
+    background: #22c55e;
+}
+
+.legend-box.not-answered {
+    background: #f8fafc;
+    border: 1px solid #ccc;
+}
+
+
+/* ================= SUBMIT ================= */
+
+.submit-btn {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #dc2626;
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* ================= RESULT PAGE ================= */
+
+#resultPage {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #f2f5f9;
+}
+
+.result-box {
+    width: 450px;
+
+    background: white;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.result-box h1 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+
+    margin: 25px auto;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.result-details {
+    text-align: left;
+
+    margin: 25px 0;
+}
+
+.result-details p {
+    padding: 10px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+
+    .exam-container {
+        flex-direction: column;
+    }
+
+    .question-panel {
+        width: 100%;
+    }
+
+    .exam-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

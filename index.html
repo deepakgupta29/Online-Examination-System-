@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Examination System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <div id="loginPage" class="page">
+
+        <div class="login-box">
+
+            <h1>Online Examination Center</h1>
+
+            <p class="subtitle">
+                College Online Examination System
+            </p>
+
+            <label>Student Name</label>
+            <input type="text" id="studentName" placeholder="Enter your name">
+
+            <label>Roll Number</label>
+            <input type="text" id="rollNumber" placeholder="Enter roll number">
+
+            <button onclick="startExam()">Start Examination</button>
+
+            <p id="loginError" class="error"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= EXAM PAGE ================= -->
+
+    <div id="examPage" class="page hidden">
+
+        <!-- Header -->
+
+        <header class="exam-header">
+
+            <div>
+                <h2>Online Examination</h2>
+                <p id="studentInfo"></p>
+            </div>
+
+            <div class="timer">
+                Time Left:
+                <span id="timer">05:00</span>
+            </div>
+
+        </header>
+
+
+        <!-- Main Exam Area -->
+
+        <div class="exam-container">
+
+            <!-- Questions -->
+
+            <main class="question-section">
+
+                <div class="question-number">
+                    Question <span id="questionNumber">1</span>
+                    of <span id="totalQuestions">5</span>
+                </div>
+
+                <h2 id="questionText">
+                    Question will appear here
+                </h2>
+
+                <div id="optionsContainer"></div>
+
+                <div class="buttons">
+
+                    <button
+                        id="previousBtn"
+                        onclick="previousQuestion()">
+                        Previous
+                    </button>
+
+                    <button
+                        id="nextBtn"
+                        onclick="nextQuestion()">
+                        Next
+                    </button>
+
+                </div>
+
+            </main>
+
+
+            <!-- Question Navigation -->
+
+            <aside class="question-panel">
+
+                <h3>Questions</h3>
+
+                <div id="questionNumbers"></div>
+
+                <div class="legend">
+
+                    <p>
+                        <span class="legend-box answered"></span>
+                        Answered
+                    </p>
+
+                    <p>
+                        <span class="legend-box not-answered"></span>
+                        Not Answered
+                    </p>
+
+                </div>
+
+                <button
+                    class="submit-btn"
+                    onclick="submitExam()">
+                    Submit Exam
+                </button>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= RESULT PAGE ================= -->
+
+    <div id="resultPage" class="page hidden">
+
+        <div class="result-box">
+
+            <h1>Examination Result</h1>
+
+            <p id="resultStudent"></p>
+
+            <div class="score-circle">
+                <span id="score">0</span>
+            </div>
+
+            <h2 id="resultMessage"></h2>
+
+            <div class="result-details">
+
+                <p>
+                    Total Questions:
+                    <strong id="resultTotal"></strong>
+                </p>
+
+                <p>
+                    Correct Answers:
+                    <strong id="correctAnswers"></strong>
+                </p>
+
+                <p>
+                    Wrong Answers:
+                    <strong id="wrongAnswers"></strong>
+                </p>
+
+                <p>
+                    Percentage:
+                    <strong id="percentage"></strong>
+                </p>
+
+            </div>
+
+            <button onclick="restartExam()">
+                Take Exam Again
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
